@@ -1,6 +1,6 @@
 package kata.sort;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -24,7 +24,8 @@ public class MySortTest {
         assertEquals(list(), mySort.sort(list()));
     }
 
-    @Test
+    @SuppressWarnings("deprecation")
+	@Test
     public void listofOneShouldReturnListofOne() throws Exception {
         assertEquals(list(1), mySort.sort(list(1)));
     }
@@ -33,6 +34,11 @@ public class MySortTest {
     public void listOfTwoShouldReturnOrderedList() throws Exception {
         assertEquals(list(1, 2), mySort.sort(list(1, 2)));
     }
+    
+    @Test
+	public void listOfTwoThatNotOrderShouldReturnOrderedList() throws Exception {
+    	assertEquals(list(1, 2), mySort.sort(list(2, 1)));
+	}
 
     private Object[] list() {
         return null;
