@@ -11,13 +11,13 @@ public class MySortTest {
 		MySort mySort = new MySort();
 		assertEquals(list(), mySort.sort(null));
 	}
-	
+
 	@Test
 	public void emptyList2() throws Exception {
 		MySort mySort = new MySort();
 		assertEquals(list(), mySort.sort(list()));
 	}
-	
+
 	@Test
 	public void listofOneShouldReturnListofOne() throws Exception {
 		MySort mySort = new MySort();
@@ -26,6 +26,10 @@ public class MySortTest {
 
 	private Object[] list() {
 		return null;
+	}
+
+	private Object[] list(Object n) {
+		return new Object[]{ n };
 	}
 
 }
