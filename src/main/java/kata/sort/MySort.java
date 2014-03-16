@@ -3,10 +3,8 @@ package kata.sort;
 public class MySort {
     public Integer[] sort(Integer[] numbers) {
         if (numbers != null) {
-            int elementLength = numbers.length - 1;
-
             for (Integer number : numbers) {
-                for (int index = 0; index < elementLength; ++index) {
+                for (int index = 0; index < numbers.length - 1; ++index) {
                     int leftIndex = index, rightIndex = index + 1;
                     if (isGreaterThan(numbers[leftIndex], numbers[rightIndex])) {
                         swap(numbers, leftIndex, rightIndex);
