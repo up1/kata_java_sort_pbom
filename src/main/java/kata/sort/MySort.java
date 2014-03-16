@@ -8,21 +8,20 @@ public class MySort {
 
         int listLength = list.length;
         if (listLength == 2) {
-            int leftNumber = (Integer) list[0];
-            int rightNumber = (Integer) list[1];
-            if (leftNumber > rightNumber) {
-                list[0] = rightNumber;
-                list[1] = leftNumber;
-            }
+            compareSwap(list, 0, 1);
         } else if (listLength == 3) {
-            int leftNumber = (Integer) list[1];
-            int rightNumber = (Integer) list[2];
-            if (leftNumber > rightNumber) {
-                list[1] = rightNumber;
-                list[2] = leftNumber;
-            }
+            compareSwap(list, 1, 2);
         }
 
         return list;
+    }
+
+    private void compareSwap(Object[] list, int leftIndex, int rightIndex) {
+            int leftNumber = (Integer) list[leftIndex];
+            int rightNumber = (Integer) list[rightIndex];
+            if (leftNumber > rightNumber) {
+                list[leftIndex] = rightNumber;
+                list[rightIndex] = leftNumber;
+            }
     }
 }
