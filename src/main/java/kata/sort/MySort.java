@@ -2,6 +2,7 @@ package kata.sort;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.commons.lang.ArrayUtils;
 
 public class MySort {
 
@@ -22,18 +23,17 @@ public class MySort {
 
         	firstHalfList.add(firstValue);
 
-        	Integer[] firstHalfArray = sort(listToArray(firstHalfList));
-        	Integer[] secondHalfArray = sort(listToArray(secondHalfList));
+        	Integer[] firstHalfArray = sort(convertIntegerListToArray(firstHalfList));
+        	Integer[] secondHalfArray = sort(convertIntegerListToArray(secondHalfList));
 
-        	System.arraycopy(firstHalfArray, 0, numbers, 0, firstHalfArray.length) ;
-        	System.arraycopy(secondHalfArray, 0, numbers, firstHalfArray.length, secondHalfArray.length) ;
+        	numbers = (Integer[])ArrayUtils.addAll(firstHalfArray, secondHalfArray);
+
         }
         return numbers;
     }
 
-    private Integer[] listToArray (List<Integer> integerList) {
-		return integerList.toArray(new Integer[integerList.size()]);	
-
+    private Integer[] convertIntegerListToArray (List<Integer> integerList) {
+		return integerList.toArray(new Integer[integerList.size()]);
     }
 
 }
