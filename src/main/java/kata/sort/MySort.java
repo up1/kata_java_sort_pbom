@@ -1,25 +1,28 @@
 package kata.sort;
 
 public class MySort {
-    public Object[] sort(Object[] list) {
-        if (list != null) {
-            int elementLength = list.length - 1;
-
-            for (Object item : list) {
-                for (int index = 0; index < elementLength; ++index)
-                    compareSwap(list, index, index + 1);
+    public Integer[] sort(Integer[] numbers) {
+        if (numbers != null) {
+            for (Integer number : numbers) {
+                for (int index = 0; index < numbers.length - 1; ++index) {
+                    int leftIndex = index, rightIndex = index + 1;
+                    if (isGreaterThan(numbers[leftIndex], numbers[rightIndex])) {
+                        swap(numbers, leftIndex, rightIndex);
+                    }
+                }
             }
         }
 
-        return list;
+        return numbers;
     }
 
-    private void compareSwap(Object[] list, int leftIndex, int rightIndex) {
-            int leftNumber = (Integer) list[leftIndex];
-            int rightNumber = (Integer) list[rightIndex];
-            if (leftNumber > rightNumber) {
-                list[leftIndex] = rightNumber;
-                list[rightIndex] = leftNumber;
-            }
+    private boolean isGreaterThan(Integer leftNumber, Integer rightNumber) {
+        return leftNumber > rightNumber;
+    }
+
+    private void swap(Integer[] list, Integer leftIndex, Integer rightIndex) {
+        Integer buf = list[leftIndex];
+        list[leftIndex] = rightIndex;
+        list[rightIndex] = buf;
     }
 }
