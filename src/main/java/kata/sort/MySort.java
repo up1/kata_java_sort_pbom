@@ -6,20 +6,26 @@ public class MySort {
             int elementLength = list.length - 1;
 
             for (Object item : list) {
-                for (int index = 0; index < elementLength; ++index)
-                    compareSwap(list, index, index + 1);
+                for (int index = 0; index < elementLength; ++index) {
+                    int leftIndex = index, rightIndex = index + 1;
+                    if (compare((Integer) list[leftIndex], (Integer) list[rightIndex])) {
+                        swap(list, leftIndex, rightIndex);
+                    }
+                }
             }
         }
 
         return list;
     }
 
-    private void compareSwap(Object[] list, int leftIndex, int rightIndex) {
-            int leftNumber = (Integer) list[leftIndex];
-            int rightNumber = (Integer) list[rightIndex];
-            if (leftNumber > rightNumber) {
-                list[leftIndex] = rightNumber;
-                list[rightIndex] = leftNumber;
-            }
+    private boolean compare(Integer leftNumber, Integer rightNumber) {
+        return leftNumber > rightNumber;
+    }
+
+    private void swap(Object[] list, Integer leftIndex, Integer rightIndex) {
+        Object buf;
+        buf = list[leftIndex];
+        list[leftIndex] = rightIndex;
+        list[rightIndex] = buf;
     }
 }
