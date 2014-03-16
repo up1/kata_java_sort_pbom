@@ -7,12 +7,8 @@ public class MySort {
         }
 
         int listLength = list.length;
-        if (listLength == 2) {
-            compareSwap(list, 0, 1);
-        } else if (listLength == 3) {
-            for (int index = 0; index < listLength - 1; ++index)
-                compareSwap(list, index, index + 1);
-        }
+        for (int index = 0; index < listLength - 1; ++index)
+            compareSwap(list, index, index + 1);
 
         return list;
     }
