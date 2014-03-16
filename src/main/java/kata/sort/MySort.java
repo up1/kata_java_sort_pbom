@@ -5,10 +5,10 @@ public class MySort {
     }
 
     public Object[] sort(Object[] list) {
-        if (list == null) {
+        if (isEmptyList(list)) {
             return null;
         }
-        if (list.length == 1) {
+        if (hasOneElement(list)) {
             return list;
         }
         Object tmp;
@@ -24,4 +24,11 @@ public class MySort {
         return a > b;
     }
 
+    private boolean isEmptyList(Object[] list) {
+        return list == null;
+    }
+
+    private boolean hasOneElement(Object[] list) {
+        return list.length == 1;
+    }
 }
