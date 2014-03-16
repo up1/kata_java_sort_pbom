@@ -11,17 +11,23 @@ public class MySort {
         if (hasOneElement(list)) {
             return list;
         }
-        Object tmp;
-        if (moreThanCompare((Integer) list[0], (Integer) list[1])) {
-            tmp = list[1];
-            list[1] = list[0];
-            list[0] = tmp;
+        if (moreThanCompare(list[0], list[1])) {
+            return swap(list, 0, 1);
         }
         return list;
     }
 
-    private boolean moreThanCompare(Integer a, Integer b) {
-        return a > b;
+    private Object[] swap(Object[] list, int i, int j) {
+        Object tmp;
+        tmp = list[i];
+        list[i] = list[j];
+        list[j] = tmp;
+
+        return list;
+    }
+
+    private boolean moreThanCompare(Object a, Object b) {
+        return (Integer) a > (Integer) b;
     }
 
     private boolean isEmptyList(Object[] list) {
