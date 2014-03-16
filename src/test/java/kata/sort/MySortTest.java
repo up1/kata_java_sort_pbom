@@ -12,4 +12,8 @@ public class MySortTest {
 		assertEquals(list(), mySort.sort(null));
 	}
 
+	private Object[] list() {
+		return null;
+	}
+
 }
