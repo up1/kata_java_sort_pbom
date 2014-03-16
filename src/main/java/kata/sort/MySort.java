@@ -3,10 +3,9 @@ package kata.sort;
 public class MySort {
     public Object[] sort(Object[] list) {
         if (list != null) {
-            int round = list.length - 1;
             int elementLength = list.length - 1;
 
-            for (int roundCount = 0 ; roundCount < round ; ++roundCount) {
+            for (Object item : list) {
                 for (int index = 0; index < elementLength; ++index)
                     compareSwap(list, index, index + 1);
             }
