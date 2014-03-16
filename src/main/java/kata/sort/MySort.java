@@ -11,15 +11,17 @@ public class MySort {
         if (list.length == 1) {
             return list;
         }
-        Integer a = (Integer) list[0];
-        Integer b = (Integer) list[1];
         Object tmp;
-        if (a > b) {
+        if (moreThanCompare((Integer) list[0], (Integer) list[1])) {
             tmp = list[1];
             list[1] = list[0];
             list[0] = tmp;
         }
         return list;
+    }
+
+    private boolean moreThanCompare(Integer a, Integer b) {
+        return a > b;
     }
 
 }
