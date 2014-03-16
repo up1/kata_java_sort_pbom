@@ -54,15 +54,15 @@ public class MySortTest {
 		assertArrayEquals(list(1, 2, 3), mySort.sort(list(2, 1, 3)));
 	}
 
-//	@Test
-//	public void listOfThreeShouldReturnOrderedList4() throws Exception {
-//		assertArrayEquals(list(1, 2, 3), mySort.sort(list(3, 2, 1)));
-//	}
-//
-//	@Test
-//	public void listOfFourShouldReturnOrderedList() throws Exception {
-//		assertArrayEquals(list(1, 2, 3, 4), mySort.sort(list(4, 3, 2, 1)));
-//	}
+	@Test
+	public void listOfThreeShouldReturnOrderedList4() throws Exception {
+		assertArrayEquals(list(1, 2, 3), mySort.sort(list(3, 2, 1)));
+	}
+
+	@Test
+	public void listOfFourShouldReturnOrderedList() throws Exception {
+		assertArrayEquals(list(1, 2, 3, 4), mySort.sort(list(4, 3, 2, 1)));
+	}
 
 	private Integer[] list() {
 		return null;

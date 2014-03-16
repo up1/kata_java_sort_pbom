@@ -22,7 +22,7 @@ public class MySort {
 
 	        	firstHalfList.add(firstValue);
 
-	        	Integer[] firstHalfArray = sort(firstHalfList.toArray(new Integer[firstHalfList.size()]));
+	        Integer[] firstHalfArray = sort(firstHalfList.toArray(new Integer[firstHalfList.size()]));
 	        	Integer[] secondHalfArray = sort(secondHalfList.toArray(new Integer[secondHalfList.size()]));
 
 	        	numbers = new Integer[firstHalfArray.length + secondHalfArray.length];
