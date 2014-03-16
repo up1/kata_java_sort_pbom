@@ -8,8 +8,8 @@ public class MySort {
         if (numbers != null) {
         	Integer firstValue = numbers[0];
 
-        	List firstHalfList = new ArrayList<Integer>();	
-        	List secondHalfList = new ArrayList<Integer>();
+        	List<Integer> firstHalfList = new ArrayList<Integer>();	
+        	List<Integer> secondHalfList = new ArrayList<Integer>();
 
         	for (Integer number : numbers) {
         		if (number < firstValue) {
