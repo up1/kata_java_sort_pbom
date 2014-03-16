@@ -10,8 +10,8 @@ public class MySort {
         if (listLength == 2) {
             compareSwap(list, 0, 1);
         } else if (listLength == 3) {
-            compareSwap(list, 0, 1);
-            compareSwap(list, 1, 2);
+            for (int index = 0; index < listLength - 1; ++index)
+                compareSwap(list, index, index + 1);
         }
 
         return list;
