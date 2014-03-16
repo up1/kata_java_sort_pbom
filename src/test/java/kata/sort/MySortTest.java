@@ -39,6 +39,11 @@ public class MySortTest {
 	public void listOfTwoThatNotOrderShouldReturnOrderedList() throws Exception {
 		assertArrayEquals(list(1, 2), mySort.sort(list(2, 1)));
 	}
+	
+	@Test
+	public void listOfThreeShouldReturnOrderedList() throws Exception {
+		assertArrayEquals(list(1, 2, 3), mySort.sort(list(1, 2, 3)));
+	}
 
 	private Object[] list() {
 		return null;
