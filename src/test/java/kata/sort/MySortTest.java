@@ -1,6 +1,7 @@
 package kata.sort;
 
 import static org.junit.Assert.*;
+import static kata.sort.MySort.list;
 
 import org.junit.Test;
 
@@ -28,14 +29,6 @@ public class MySortTest {
 	public void listOfTwoShouldReturnOrderedList() throws Exception {
 		MySort mySort = new MySort();
 		assertEquals(list(1,2), mySort.sort(list(1,2)));
-	}
-
-	private Object[] list() {
-		return null;
-	}
-
-	private Object[] list(Object n) {
-		return new Object[]{ n };
 	}
 
 }
