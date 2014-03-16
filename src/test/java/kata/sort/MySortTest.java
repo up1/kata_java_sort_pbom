@@ -23,6 +23,12 @@ public class MySortTest {
 		MySort mySort = new MySort();
 		assertEquals(list(1), mySort.sort(list(1)));
 	}
+	
+	@Test
+	public void listOfTwoShouldReturnOrderedList() throws Exception {
+		MySort mySort = new MySort();
+		assertEquals(list(1,2), mySort.sort(list(1,2)));
+	}
 
 	private Object[] list() {
 		return null;
