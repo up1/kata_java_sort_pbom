@@ -1,21 +1,21 @@
 package kata.sort;
 
 public class MySort {
-    public Object[] sort(Object[] list) {
-        if (list != null) {
-            int elementLength = list.length - 1;
+    public Integer[] sort(Integer[] numbers) {
+        if (numbers != null) {
+            int elementLength = numbers.length - 1;
 
-            for (Object item : list) {
+            for (Integer number : numbers) {
                 for (int index = 0; index < elementLength; ++index) {
                     int leftIndex = index, rightIndex = index + 1;
-                    if (isGreaterThan((Integer) list[leftIndex], (Integer) list[rightIndex])) {
-                        swap(list, leftIndex, rightIndex);
+                    if (isGreaterThan(numbers[leftIndex], numbers[rightIndex])) {
+                        swap(numbers, leftIndex, rightIndex);
                     }
                 }
             }
         }
 
-        return list;
+        return numbers;
     }
 
     private boolean isGreaterThan(Integer leftNumber, Integer rightNumber) {
