@@ -17,6 +17,12 @@ public class MySortTest {
 		MySort mySort = new MySort();
 		assertEquals(list(), mySort.sort(list()));
 	}
+	
+	@Test
+	public void listofOneShouldReturnListofOne() throws Exception {
+		MySort mySort = new MySort();
+		assertEquals(list(1), mySort.sort(list(1)));
+	}
 
 	private Object[] list() {
 		return null;
