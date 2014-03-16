@@ -11,21 +11,31 @@ public class MySortTest {
 		MySort mySort = new MySort();
 		assertEquals(list(), mySort.sort(null));
 	}
-	
+
 	@Test
 	public void emptyList2() throws Exception {
 		MySort mySort = new MySort();
 		assertEquals(list(), mySort.sort(list()));
 	}
-	
+
 	@Test
 	public void listofOneShouldReturnListofOne() throws Exception {
 		MySort mySort = new MySort();
 		assertEquals(list(1), mySort.sort(list(1)));
 	}
+	
+	@Test
+	public void listOfTwoShouldReturnOrderedList() throws Exception {
+		MySort mySort = new MySort();
+		assertEquals(list(1,2), mySort.sort(list(1,2)));
+	}
 
 	private Object[] list() {
 		return null;
+	}
+
+	private Object[] list(Object n) {
+		return new Object[]{ n };
 	}
 
 }
