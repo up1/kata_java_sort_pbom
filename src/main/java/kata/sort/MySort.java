@@ -8,7 +8,7 @@ public class MySort {
             for (Object item : list) {
                 for (int index = 0; index < elementLength; ++index) {
                     int leftIndex = index, rightIndex = index + 1;
-                    if (compare((Integer) list[leftIndex], (Integer) list[rightIndex])) {
+                    if (isGreaterThan((Integer) list[leftIndex], (Integer) list[rightIndex])) {
                         swap(list, leftIndex, rightIndex);
                     }
                 }
@@ -18,13 +18,12 @@ public class MySort {
         return list;
     }
 
-    private boolean compare(Integer leftNumber, Integer rightNumber) {
+    private boolean isGreaterThan(Integer leftNumber, Integer rightNumber) {
         return leftNumber > rightNumber;
     }
 
     private void swap(Object[] list, Integer leftIndex, Integer rightIndex) {
-        Object buf;
-        buf = list[leftIndex];
+        Object buf = list[leftIndex];
         list[leftIndex] = rightIndex;
         list[rightIndex] = buf;
     }
