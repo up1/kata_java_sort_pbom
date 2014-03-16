@@ -2,33 +2,17 @@ package kata.sort;
 
 public class MySort {
     public Integer[] sort(Integer[] numbers) {
-    	if (numbers == null)
-    		return null;
+    	if (numbers == null || numbers.length == 1)
+    		return numbers;
 
-    	Integer[] sortedArray = new Integer[numbers.length];
-
-    	Integer position = 0;
-   		Integer minValue = 0;
-
-    	for (Integer numberForMin : numbers) {
-    		Integer newMinValue = getNewMinValue(numbers, minValue);
-			sortedArray[position++] = newMinValue;
-			minValue = newMinValue;
-    	}
-        return sortedArray;
-    }
-
-    private Integer getNewMinValue(Integer[] numbers, Integer oldMinValue) {
-    	Integer newMinValue = null;
-		for (Integer innerNumber : numbers) {
-			if (innerNumber > oldMinValue) {
-				if (newMinValue == null)
-					newMinValue = innerNumber;
-				if (innerNumber < newMinValue)
-					newMinValue = innerNumber;
-			}
-		}
-		return newMinValue;
+    	Integer[] returnArray = new Integer[numbers.length];
+    	if (numbers[0] > numbers[1]) {
+    		returnArray[1] = numbers[0];
+    		returnArray[0] = numbers[1];
+    	} else {
+    		returnArray = numbers;
+    	}	
+    	return returnArray;
     }
 
 }
