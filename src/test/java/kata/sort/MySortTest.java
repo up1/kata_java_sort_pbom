@@ -24,7 +24,6 @@ public class MySortTest {
 		assertArrayEquals(list(), mySort.sort(list()));
 	}
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void listofOneShouldReturnListofOne() throws Exception {
 		assertArrayEquals(list(1), mySort.sort(list(1)));
