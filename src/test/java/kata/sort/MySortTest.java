@@ -1,41 +1,45 @@
 package kata.sort;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class MySortTest {
 
-	@Test
-	public void emptyList() {
-		MySort mySort = new MySort();
-		assertEquals(list(), mySort.sort(null));
-	}
+    private MySort mySort;
 
-	@Test
-	public void emptyList2() throws Exception {
-		MySort mySort = new MySort();
-		assertEquals(list(), mySort.sort(list()));
-	}
+    @Before
+    public void setUp() {
+        mySort = new MySort();
+    }
 
-	@Test
-	public void listofOneShouldReturnListofOne() throws Exception {
-		MySort mySort = new MySort();
-		assertEquals(list(1), mySort.sort(list(1)));
-	}
-	
-	@Test
-	public void listOfTwoShouldReturnOrderedList() throws Exception {
-		MySort mySort = new MySort();
-		assertEquals(list(1,2), mySort.sort(list(1,2)));
-	}
+    @Test
+    public void emptyList() {
+        assertEquals(list(), mySort.sort(null));
+    }
 
-	private Object[] list() {
-		return null;
-	}
+    @Test
+    public void emptyList2() throws Exception {
+        assertEquals(list(), mySort.sort(list()));
+    }
 
-	private Object[] list(Object n) {
-		return new Object[]{ n };
-	}
+    @Test
+    public void listofOneShouldReturnListofOne() throws Exception {
+        assertEquals(list(1), mySort.sort(list(1)));
+    }
+
+    @Test
+    public void listOfTwoShouldReturnOrderedList() throws Exception {
+        assertEquals(list(1, 2), mySort.sort(list(1, 2)));
+    }
+
+    private Object[] list() {
+        return null;
+    }
+
+    private Object[] list(Object... list) {
+        return list;
+    }
 
 }
