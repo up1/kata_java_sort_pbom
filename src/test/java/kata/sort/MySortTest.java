@@ -8,8 +8,8 @@ public class MySortTest {
 
 	@Test
 	public void emptyList() {
-		MySort mySort = new MySortTest();
-		assertEquals(list(), mySort(null));
+		MySort mySort = new MySort();
+		assertEquals(list(), mySort.sort(null));
 	}
 
 }
