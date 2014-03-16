@@ -2,31 +2,37 @@ package kata.sort;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+
+import org.junit.Before;
 import org.junit.Test;
 
 public class MySortTest {
 
+    private MySort mySort;
+
+    @Before
+    public void setUp() {
+        mySort = new MySort();
+    }
+
 	@Test
 	public void emptyList() {
-		MySort mySort = new MySort();
 		assertEquals(list(), mySort.sort(null));
 	}
 
 	@Test
 	public void emptyList2() throws Exception {
-		MySort mySort = new MySort();
 		assertEquals(list(), mySort.sort(list()));
 	}
 
 	@Test
 	public void listofOneShouldReturnListofOne() throws Exception {
-		MySort mySort = new MySort();
 		assertEquals(list(1), mySort.sort(list(1)));
 	}
-	
+
 	@Test
 	public void listOfTwoShouldReturnOrderedList() throws Exception {
-		MySort mySort = new MySort();
 		assertEquals(list(1,2), mySort.sort(list(1,2)));
 	}
 
@@ -34,8 +40,8 @@ public class MySortTest {
 		return null;
 	}
 
-	private Object[] list(Object n) {
-		return new Object[]{ n };
+	private Object[] list(Object ...list) {
+	    return list;
 	}
 
 }
