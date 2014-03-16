@@ -22,8 +22,8 @@ public class MySort {
         return leftNumber > rightNumber;
     }
 
-    private void swap(Object[] list, Integer leftIndex, Integer rightIndex) {
-        Object buf = list[leftIndex];
+    private void swap(Integer[] list, Integer leftIndex, Integer rightIndex) {
+        Integer buf = list[leftIndex];
         list[leftIndex] = rightIndex;
         list[rightIndex] = buf;
     }
