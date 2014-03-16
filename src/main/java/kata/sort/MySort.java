@@ -1,24 +1,19 @@
 package kata.sort;
 
 public class MySort {
-    public MySort() {
-    }
-
     public Object[] sort(Object[] list) {
         if (list == null) {
             return null;
         }
-        int listLength = list.length;
 
-        for (int leftIndex = 0; leftIndex < listLength - 1; ++leftIndex) {
-            for (int rightIndex = leftIndex + 1; rightIndex < listLength; ++rightIndex) {
-                int leftNumber = (Integer) list[leftIndex];
-                int rightNumber = (Integer) list[rightIndex];
+        int listLength = list.length;
+        if (listLength == 2) {
+                int leftNumber = (Integer) list[0];
+                int rightNumber = (Integer) list[1];
                 if (leftNumber > rightNumber) {
-                    list[leftIndex] = rightNumber;
-                    list[rightIndex] = leftNumber;
+                    list[0] = rightNumber;
+                    list[1] = leftNumber;
                 }
-            }
         }
 
         return list;
