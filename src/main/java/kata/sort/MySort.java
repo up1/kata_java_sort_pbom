@@ -6,8 +6,7 @@ public class MySort {
             return null;
         }
 
-        int listLength = list.length;
-        for (int index = 0; index < listLength - 1; ++index)
+        for (int index = 0; index < list.length - 1; ++index)
             compareSwap(list, index, index + 1);
 
         return list;
