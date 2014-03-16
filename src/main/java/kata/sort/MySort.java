@@ -2,12 +2,10 @@ package kata.sort;
 
 public class MySort {
     public Object[] sort(Object[] list) {
-        if (list == null) {
-            return null;
+        if (list != null) {
+            for (int index = 0; index < list.length - 1; ++index)
+                compareSwap(list, index, index + 1);
         }
-
-        for (int index = 0; index < list.length - 1; ++index)
-            compareSwap(list, index, index + 1);
 
         return list;
     }
