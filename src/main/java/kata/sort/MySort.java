@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
-import org.apache.commons.lang.ArrayUtils;
 
 public class MySort {
 
@@ -33,7 +32,7 @@ public class MySort {
 	}
 
 	private List<Integer> makeResultList(List<Integer> leftList, Integer midNumber, List<Integer> rightList) {
-		ArrayList<Integer> resultList = new ArrayList<Integer>();
+		List<Integer> resultList = new ArrayList<Integer>();
 		resultList.addAll(leftList);
 		resultList.add(midNumber);
 		resultList.addAll(rightList);
