@@ -7,6 +7,9 @@ import java.util.ArrayList;
 
 public class MySort {
 
+	private static final Integer HIGHER_THAN = 1;
+	private static final Integer LOWER_THAN = -1;
+
 	public Integer[] sort(Integer[] numbers) {
 		if (numbers != null && numbers.length > 1) {
 			return sort(Arrays.asList(numbers)).toArray(new Integer[numbers.length]);
@@ -18,10 +21,23 @@ public class MySort {
 		if( numbers.size() == 0 ) return numbers;
 		
 		Integer firstValue = numbers.get(0);
-		List<Integer> lowerFirstValueList = getLowerValueList(numbers, firstValue);
-		List<Integer> higherFirstValueList = getHigherValueList(numbers, firstValue);
+		List<Integer> lowerFirstValueList = getMatchValueList(numbers, LOWER_THAN, firstValue);
+		List<Integer> higherFirstValueList = getMatchValueList(numbers, HIGHER_THAN, firstValue);
 
 		return makeResultList(sort(lowerFirstValueList), firstValue, sort(higherFirstValueList));
+	}
+
+	private List<Integer> getMatchValueList (List<Integer> numbers, Integer matchingCriteria, Integer matchingValue) {
+		List<Integer> returnValueList = new ArrayList<Integer>();
+		for (Integer number : numbers) {
+			if(isMatchOnMatcher(number, matchingCriteria, matchingValue))
+				returnValueList.add(number);
+		}
+		return returnValueList;
+	}
+
+	private boolean isMatchOnMatcher (Integer number, Integer matchingCriteria, Integer matchingValue) {
+		return (matchingCriteria == HIGHER_THAN) ? (number > matchingValue) : (number < matchingValue);
 	}
 
 	private List<Integer> makeResultList(List<Integer> leftList, Integer midNumber, List<Integer> rightList) {
@@ -32,23 +48,4 @@ public class MySort {
 		return resultList;
 	}
 
-	private List<Integer> getLowerValueList (List<Integer> numbers, Integer compareValue) {
-		List<Integer> lowerValueList = new ArrayList<Integer>();
-		for (Integer number : numbers) {
-			if (number < compareValue) {
-				lowerValueList.add(number);
-			}
-		}
-		return lowerValueList;
-	}
-
-	private List<Integer> getHigherValueList (List<Integer> numbers, Integer compareValue) {
-		List<Integer> higherValueList = new ArrayList<Integer>();
-		for (Integer number : numbers) {
-			if (number > compareValue) {
-				higherValueList.add(number);
-			}
-		}
-		return higherValueList;
-	}
 }
